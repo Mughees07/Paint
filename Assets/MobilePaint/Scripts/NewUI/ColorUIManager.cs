@@ -15,7 +15,7 @@ namespace unitycoder_MobilePaint
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
 		public Button[] colorpickers; // colors are taken from these buttons
-
+		public GameObject palatte;
 		public bool offsetSelected=true; // should we move the pencil when its selected
 		public float defaultOffset=-46;
 		public float moveOffsetX=-24;
@@ -42,6 +42,7 @@ namespace unitycoder_MobilePaint
 				if (button!=null)
 				{
 					button.onClick.AddListener(delegate {this.SetCurrentColor(button);});
+					Debug.Log ("hee");
 				}
 			}
 		}
@@ -59,7 +60,7 @@ namespace unitycoder_MobilePaint
 			mobilePaint3.SetPaintColor(newColor);
 			mobilePaint4.SetPaintColor(newColor);
 //			mobilePaint.paintColor = newColor;
-
+			palatte.SetActive(false);
 			if (offsetSelected)
 			{
 				ResetAllOffsets();

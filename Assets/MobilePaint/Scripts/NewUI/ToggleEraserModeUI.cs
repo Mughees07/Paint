@@ -8,10 +8,16 @@ namespace unitycoder_MobilePaint
 	public class ToggleEraserModeUI : MonoBehaviour 
 	{
 		MobilePaint mobilePaint;
+		MobilePaint mobilePaint2;
+		MobilePaint mobilePaint3;
+		MobilePaint mobilePaint4;
 
 		void Start () 
 		{
 			mobilePaint = PaintManager.mobilePaint;
+			mobilePaint2 = PaintManager.mobilePaint2;
+			mobilePaint3 = PaintManager.mobilePaint3;
+			mobilePaint4 = PaintManager.mobilePaint4;
 
 			if (mobilePaint==null) Debug.LogError("No MobilePaint assigned",gameObject);
 
@@ -26,6 +32,9 @@ namespace unitycoder_MobilePaint
 			if (GetComponent<Toggle>().isOn)
 			{
 				mobilePaint.SetDrawModeEraser();
+				mobilePaint2.SetDrawModeEraser();
+				mobilePaint3.SetDrawModeEraser();
+				mobilePaint4.SetDrawModeEraser();
 			}
 
 		}
