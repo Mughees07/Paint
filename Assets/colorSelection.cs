@@ -17,4 +17,5 @@ public class colorSelection : MonoBehaviour {
 	{
 		obj.gameObject.SetActive (true);
 	}
+
 }
