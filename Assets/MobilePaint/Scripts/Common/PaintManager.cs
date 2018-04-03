@@ -6,6 +6,7 @@ namespace unitycoder_MobilePaint
 
 	public class PaintManager : MonoBehaviour 
 	{
+		
 		public MobilePaint mobilePaintReference;
 		public MobilePaint mobilePaintReference2;
 		public MobilePaint mobilePaintReference3;
@@ -41,6 +42,7 @@ namespace unitycoder_MobilePaint
 
 			}
 		}
+
 
 	}
 }

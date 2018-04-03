@@ -8,7 +8,7 @@ namespace unitycoder_MobilePaint
 	public class ToggleFloodFillModeUI : MonoBehaviour 
 	{
 		MobilePaint mobilePaint;
-		public GameObject obj; 
+		public GameObject obj;
 		MobilePaint mobilePaint2;
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
@@ -31,19 +31,13 @@ namespace unitycoder_MobilePaint
 //			Cursor.SetCursor (cursorTexture, hotSpot, cursorMode);
 //			Cursor.visible = true;
 //		}
-		void Update () {
-			if (Input.GetMouseButtonDown (0)) 
-			{
-				obj.gameObject.SetActive (false);
-				Debug.Log ("gaib");
-			}
-		}
+
 		public void SetMode()
 		{
 			if (GetComponent<Toggle>().isOn)
 			{
 				//OnMouseEnter ();
-
+				obj.SetActive(false);
 				mobilePaint.SetDrawModeFill();
 				mobilePaint2.SetDrawModeFill();
 				mobilePaint3.SetDrawModeFill();

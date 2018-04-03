@@ -50,7 +50,7 @@ namespace unitycoder_MobilePaint
         public int brushSize = 24; // default brush size
         public int brushSizeMin = 1; // default min brush size
         public int brushSizeMax = 64; // default max brush size
-
+		public GameObject obj;
         // cached calculations
         public bool hiQualityBrush = false; // Draw more brush strokes when moving NOTE: this is slow on mobiles!
         private int brushSizeX1 = 48; // << 1
@@ -150,7 +150,7 @@ namespace unitycoder_MobilePaint
         public bool snapLinesToGrid = false; // while drawing lines
         public int gridResolution = 128;
         int gridSize = 10;
-
+		 
         // for old GUIScaling
         private float scaleAdjust = 1.0f;
         private const float BASE_WIDTH = 800;
@@ -333,6 +333,9 @@ namespace unitycoder_MobilePaint
         //bool firstRun = false; // TODO: this could be used to check if InitializeEverything() was called after first run
 
         // rebuilds everything and reloads masks,textures..
+
+
+
         public void InitializeEverything()
         {
 
@@ -483,6 +486,7 @@ namespace unitycoder_MobilePaint
         // *** MAINLOOP ***
         void Update()
         {
+			
             if (enableTouch)
             {
                 TouchPaint();
@@ -591,6 +595,7 @@ namespace unitycoder_MobilePaint
 
             if (Input.GetMouseButtonDown(0))
             {
+				obj.SetActive (false);
                 // take this position as start position
                 if (!Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, paintLayerMask)) return;
 
@@ -2502,6 +2507,7 @@ namespace unitycoder_MobilePaint
         // Basic undo function, copies original array (before drawing) into the image and applies it
         public void DoUndo()
         {
+			obj.SetActive (false);
             if (undoEnabled)
             {
                 if (undoPixels.Count > 0)
@@ -2530,6 +2536,7 @@ namespace unitycoder_MobilePaint
         // if this is called, undo buffer gets updated
         public void ClearImage()
         {
+			obj.SetActive (false);
             ClearImage(true);
         }
 

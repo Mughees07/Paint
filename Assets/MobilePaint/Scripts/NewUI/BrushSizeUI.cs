@@ -12,7 +12,7 @@ namespace unitycoder_MobilePaint
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
 		private Slider slider;
-
+		public GameObject obj;
 		void Start () 
 		{
 			mobilePaint = PaintManager.mobilePaint; // gets reference to mobilepaint through PaintManager
@@ -29,7 +29,8 @@ namespace unitycoder_MobilePaint
 				slider.value = mobilePaint.brushSize;
 				slider.onValueChanged.AddListener((value) => 
 					{ 
-					mobilePaint.SetBrushSize((int)value); 
+						obj.SetActive(false);
+						mobilePaint.SetBrushSize((int)value); 
 						mobilePaint2.SetBrushSize((int)value);
 						mobilePaint3.SetBrushSize((int)value); 
 						mobilePaint4.SetBrushSize((int)value);

@@ -10,6 +10,7 @@ namespace unitycoder_MobilePaint
 
 	public class ColorUIManager : MonoBehaviour 
 	{
+		
 		MobilePaint mobilePaint;
 		MobilePaint mobilePaint2;
 		MobilePaint mobilePaint3;
@@ -46,6 +47,8 @@ namespace unitycoder_MobilePaint
 				}
 			}
 		}
+
+
 
 		// some button was clicked, lets take color from it and send to mobilepaint canvas 
  		public void SetCurrentColor(Button button)

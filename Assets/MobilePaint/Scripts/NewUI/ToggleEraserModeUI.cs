@@ -11,7 +11,7 @@ namespace unitycoder_MobilePaint
 		MobilePaint mobilePaint2;
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
-
+		public GameObject obj;
 		void Start () 
 		{
 			mobilePaint = PaintManager.mobilePaint;
@@ -31,6 +31,7 @@ namespace unitycoder_MobilePaint
 		{
 			if (GetComponent<Toggle>().isOn)
 			{
+				obj.SetActive (false);
 				mobilePaint.SetDrawModeEraser();
 				mobilePaint2.SetDrawModeEraser();
 				mobilePaint3.SetDrawModeEraser();

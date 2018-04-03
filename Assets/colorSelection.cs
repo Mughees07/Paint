@@ -10,12 +10,18 @@ public class colorSelection : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		
 	}
 	public void colorselect()
 	{
 		obj.gameObject.SetActive (true);
+		if (Input.GetMouseButtonDown (0)) 
+		{
+			obj.SetActive(false);
+			Debug.Log ("gaib");
+		}
 	}
 
 }

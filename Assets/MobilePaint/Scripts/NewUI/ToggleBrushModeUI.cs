@@ -11,6 +11,7 @@ namespace unitycoder_MobilePaint
 		MobilePaint mobilePaint2;
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
+		public GameObject obj;
 		public Texture2D cursorTexture;
 		public CursorMode cursorMode = CursorMode.Auto;
 		public Vector2 hotSpot = Vector2.zero;
@@ -35,7 +36,7 @@ namespace unitycoder_MobilePaint
 		public void SetMode()
 		{
 			if (GetComponent<Toggle>().isOn)
-			{
+			{obj.SetActive(false);
 				//OnMouseEnter ();
 				mobilePaint.SetDrawModeBrush();
 				mobilePaint2.SetDrawModeBrush();
