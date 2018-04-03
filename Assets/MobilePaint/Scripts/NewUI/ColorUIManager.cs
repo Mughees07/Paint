@@ -43,7 +43,7 @@ namespace unitycoder_MobilePaint
 				if (button!=null)
 				{
 					button.onClick.AddListener(delegate {this.SetCurrentColor(button);});
-					Debug.Log ("hee");
+
 				}
 			}
 		}
