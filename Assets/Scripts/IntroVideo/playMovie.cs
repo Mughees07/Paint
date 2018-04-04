@@ -28,7 +28,7 @@ public class playMovie : MonoBehaviour
     private IEnumerator PlayStreamingVideo(string url)
     {
 
-        Handheld.PlayFullScreenMovie(url, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFill);
+//        Handheld.PlayFullScreenMovie(url, Color.black, FullScreenMovieControlMode.Hidden, FullScreenMovieScalingMode.AspectFill);
         yield return new WaitForEndOfFrame();
 
 

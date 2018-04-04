@@ -29,12 +29,14 @@ namespace unitycoder_MobilePaint
 			{
 				mobilePaint2 = mobilePaintReference2;
 
-			}if (mobilePaintReference3 == null)
+			}
+			if (mobilePaintReference3 == null)
 				Debug.LogError ("No MobilePaint assigned at " + transform.name, gameObject);
 			{
 				mobilePaint3 = mobilePaintReference3;
 
 			}
+
 			if (mobilePaintReference4 == null)
 				Debug.LogError ("No MobilePaint assigned at " + transform.name, gameObject);
 			{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveImage : MonoBehaviour {
-
+	
 	public int resWidth = 960; 
 	public int resHeight = 600;
 	// Use this for initialization
@@ -29,9 +29,11 @@ public class SaveImage : MonoBehaviour {
 		GetComponent<Camera>().targetTexture = rt;
 		Texture2D screenShot = new Texture2D(resWidth, resHeight, TextureFormat.ARGB32, false);
 		GetComponent<Camera>().Render();
+
 		RenderTexture.active = rt;
 		screenShot.ReadPixels(new Rect(0, 0, resWidth, resHeight), 0, 0);
 		GetComponent<Camera>().targetTexture = null;
+
 		RenderTexture.active = null; // JC: added to avoid errors
 		Destroy(rt);
 		byte[] bytes = screenShot.EncodeToPNG();
