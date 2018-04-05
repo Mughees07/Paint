@@ -51,6 +51,8 @@ namespace unitycoder_MobilePaint
         public int brushSizeMin = 1; // default min brush size
         public int brushSizeMax = 64; // default max brush size
 		public GameObject obj;
+		public GameObject RightLeft;
+		public GameObject UpperLower;
         // cached calculations
         public bool hiQualityBrush = false; // Draw more brush strokes when moving NOTE: this is slow on mobiles!
         private int brushSizeX1 = 48; // << 1
@@ -486,6 +488,10 @@ namespace unitycoder_MobilePaint
         // *** MAINLOOP ***
         void Update()
         {
+			Vector3 pos = Camera.main.WorldToViewportPoint (transform.position);
+			pos.x = Mathf.Clamp01(pos.x);
+			pos.y = Mathf.Clamp01(pos.y);
+			transform.position = Camera.main.ViewportToWorldPoint(pos);
 			
             if (enableTouch)
             {
@@ -596,6 +602,8 @@ namespace unitycoder_MobilePaint
             if (Input.GetMouseButtonDown(0))
             {
 				obj.SetActive (false);
+				UpperLower.SetActive (false);
+				RightLeft.SetActive (false);
                 // take this position as start position
                 if (!Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, paintLayerMask)) return;
 
@@ -2508,6 +2516,8 @@ namespace unitycoder_MobilePaint
         public void DoUndo()
         {
 			obj.SetActive (false);
+			UpperLower.SetActive (false);
+			RightLeft.SetActive (false);
             if (undoEnabled)
             {
                 if (undoPixels.Count > 0)
@@ -2537,6 +2547,8 @@ namespace unitycoder_MobilePaint
         public void ClearImage()
         {
 			obj.SetActive (false);
+			UpperLower.SetActive (false);
+			RightLeft.SetActive (false);
             ClearImage(true);
         }
 

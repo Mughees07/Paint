@@ -9,6 +9,8 @@ namespace unitycoder_MobilePaint
 	{
 		MobilePaint mobilePaint;
 		public GameObject obj;
+		public GameObject RightLeft;
+		public GameObject UpperLower;
 		MobilePaint mobilePaint2;
 		MobilePaint mobilePaint3;
 		MobilePaint mobilePaint4;
@@ -38,6 +40,8 @@ namespace unitycoder_MobilePaint
 			{
 				//OnMouseEnter ();
 				obj.SetActive(false);
+				UpperLower.SetActive (false);
+				RightLeft.SetActive (false);
 				mobilePaint.SetDrawModeFill();
 				mobilePaint2.SetDrawModeFill();
 				mobilePaint3.SetDrawModeFill();

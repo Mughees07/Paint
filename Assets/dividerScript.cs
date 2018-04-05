@@ -8,6 +8,10 @@ public class dividerScript : MonoBehaviour {
 	public GameObject line3;
 	public GameObject line4;
 
+	public GameObject divider;
+	public GameObject RightLeft;
+	public GameObject UpperLower;
+
 	public GameObject Canvas1;
 	public GameObject Canvas2;
 	public GameObject Canvas3;
@@ -69,5 +73,12 @@ public class dividerScript : MonoBehaviour {
 		
 		Canvas1.transform.localScale = new Vector3 (0.3613272f, 1.296688f, 1f);
 		Canvas1.transform.localPosition = new Vector3 (-41f, 1,0);
+	}
+
+	public void dividerOpen()
+	{
+		
+		UpperLower.SetActive (true);
+		RightLeft.SetActive (true);
 	}
 }
